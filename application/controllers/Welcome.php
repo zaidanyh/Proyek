@@ -5,5 +5,9 @@
 		public function __construct(){
 			parent::__construct();
 		}
+		public function index() {
+			$data['title'] = "Welcome";
+			$this->load->view('Customer/index', $data);
+		}
 	}
 ?>
