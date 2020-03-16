@@ -7,7 +7,10 @@
 		}
 		public function index() {
 			$data['title'] = "Welcome";
+			$this->load->view('template/header', $data);
 			$this->load->view('Customer/index', $data);
+			$this->load->view('template/footer', $data);
+			
 		}
 	}
 ?>
