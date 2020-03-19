@@ -13,5 +13,9 @@
 		public function index() {
 			$data['title'] = "Home Pencuci | Point & Care";
 		}
+
+		public function takeJob() {
+			
+		}
 	}
 ?>

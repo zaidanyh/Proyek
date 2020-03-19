@@ -11,5 +11,28 @@
 
 			$this->load->view('Login/index', $data);
 		}
+		public function process() {
+			$username = htmlspecialchars($this->input->post('username'));
+			$password = htmlspecialchars($this->input->post('password'));
+
+			$cek = $this->Login->login($username, $password);
+			if ($cek) {
+				foreach ($cek as $ck);
+				$this->session->set_userdata('username', $ck->username);
+				$this->session->set_userdata('level', $ck->level);
+				if ($this->session->userdata('level') == "manager") {
+				$this->session->set_userdata('nama_lengkap', $cek[0]->nama_lengkap);
+				redirect('Manager','refresh');
+				} else if ($this->session->userdata('level') == "pegawai") {
+					$this->session->set_userdata('nama_lengkap', $cek[0]->nama_lengkap);
+					redirect('Pegawai','refresh');
+				} else if ($this->session->userdata('level') == "pencuci") {
+						$this->session->set_userdata('nama_lengkap', $cek[0]->nama_lengkap);
+						redirect('Pencuci','refresh');
+				} 
+			} else {
+				;
+			}
+		}
 	}
 ?>
