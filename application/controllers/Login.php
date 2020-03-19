@@ -4,12 +4,14 @@
 	class Login extends CI_Controller {
 		public function __construct(){
 			parent::__construct();
-			$this->load->model('Login');
+			
 		}
 		public function index() {
 			$data['title'] = "Login | Point & Care";
 
-			$this->load->view('Login/index', $data);
+			$this->load->view('template/header', $data);
+			$this->load->view('Login/index');
+			$this->load->view('template/footer');
 		}
 		public function process() {
 			$username = htmlspecialchars($this->input->post('username'));

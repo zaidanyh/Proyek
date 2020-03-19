@@ -11,22 +11,21 @@
 
   <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/jquery-ui.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/owl.carousel.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/owl.theme.default.min.css')?>">
 
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="<?=base_url('assets/css/jquery.fancybox.min.css')?>">
 
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap-datepicker.css')?>">
 
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="<?=base_url('assets/fonts/flaticon/font/flaticon.css')?>">
 
-  <link rel="stylesheet" href="css/aos.css">
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="<?=base_url('assets/css/aos.css')?>">
+  <link href="<?=base_url('assets/css/jquery.mb.YTPlayer.min.css')?>" media="all" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>">
 
 
 
