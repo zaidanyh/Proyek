@@ -8,7 +8,7 @@
             return $this->db->affected_rows();
         }
 
-        //untuk mengupdate datanya
+        //untuk mengedit akun
         public function updateUser($data, $username) {
             $this->db->update('user', $data, ['username' => $username]);
             return $this->db->affected_rows();

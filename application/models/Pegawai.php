@@ -3,6 +3,11 @@
 
     class Pegawai extends CI_Model {
 
+        //untuk mengedit data pada tabel
+        public function editAkun($data, $username) {
+            $this->db->update('user', $data, ['username'=> $username]);
+            return $this->db->affected_rows();
+        }
         //untuk menambah data pada tabel pesanan
         public function insertPesanan($data) {
             $this->db->insert('pesanan', $data);
