@@ -4,7 +4,7 @@
 	class Welcome extends CI_Controller {
 		public function __construct(){
 			parent::__construct();
-			
+			$this->load->model('Customer');
 		}
 		public function index() {
 			$data['title'] = "Welcome Point Care | Laundry Shoes";
@@ -18,6 +18,16 @@
 			$this->load->view('template/header', $data);
 			$this->load->view('Customer/about');
 			$this->load->view('template/footer');
+		}
+		public function check() {
+			$title['title'] = 'Search Your Shoes | Point Care Laundry Shoes';
+
+			if ($this->input->post('search')) {
+				$data['shoes'] = $this->Customer->Search();
+			}
+			$this->load->view('View File', $title);
+			$this->load->view('View File', $data);
+			$this->load->view('View File');
 		}
 	}
 ?>

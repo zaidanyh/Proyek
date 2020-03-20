@@ -4,7 +4,7 @@
 	class Pegawai extends CI_Controller {
 		public function __construct(){
 			parent::__construct();
-			$this->load->model('Model File');
+			$this->load->model('Pegawai_Model');
 
 			if ($this->session->userdata('level') != "pegawai") {
 				redirect('Login', 'refresh');
