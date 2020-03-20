@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class Manager extends CI_Model {
+    class Manager_Model extends CI_Model {
 
         //untuk tabel user
         //untuk menambah data user

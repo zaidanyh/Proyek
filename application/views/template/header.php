@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,700|Roboto&display=swap" rel="stylesheet"> 
   <link rel="icon" type="image/png" href="<?=base_url('assets/image/logo.ico')?>">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="<?=base_url('assets/fonts/icomoon/style.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/jquery-ui.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/owl.carousel.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/owl.theme.default.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/owl.theme.default.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/jquery.fancybox.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap-datepicker.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/fonts/flaticon/font/flaticon.css')?>">
+  <link rel="stylesheet" href="<?=base_url('css/aos.css')?>">
+  <link href="<?=base_url('assets/css/jquery.mb.YTPlayer.min.css')?>" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   <div class="site-wrap">
@@ -34,7 +34,7 @@
         <div class="row align-items-center">
           <div class="col-12 text-center">
             <a href="index.html" class="site-logo">
-              <img src="images/logo.ico" alt="Image" class="img-fluid">
+              <img src="<?=base_url('assets/images/logo.ico')?>" alt="Image" class="img-fluid">
             </a>
           </div>
           <a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span

@@ -1,7 +1,7 @@
 <?php
 
     defined('BASEPATH') OR exit('No Script Direct Access Allowed');
-    class Pencuci extends CI_Model {
+    class Pencuci_Model extends CI_Model {
 
         //untuk menampilkan data dari tabel pesanan
         public function getOrder($username = null) {

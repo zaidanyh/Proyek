@@ -27,6 +27,7 @@
 			}
 		}
 		public function myJob($username) {
+			$title['title'] = 'List My Job | Point Care Laundry Shoes';
 			$data['list'] = $this->Pencuci_Model->getOrder($username);
 		}
 		public function Account($username) {

@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No Script Direcet Access Allowed');
 
-    class Pegawai extends CI_Model {
+    class Pegawai_Model extends CI_Model {
 
         //untuk mengedit data pada tabel
         public function editAkun($data, $username) {
@@ -9,9 +9,17 @@
             return $this->db->affected_rows();
         }
         //untuk menambah data pada tabel pesanan
-        public function insertPesanan($data) {
-            $this->db->insert('pesanan', $data);
-            return $this->db->affected_rows();
+        public function insertPesanan() {
+            if ($this->input->post('submit')) {
+                $insert = array(
+                    "kode_pesanan"=>$this->input->post('kode', TRUE),
+                    "nama_pesanan"=>$this->input->post('pesanan', TRUE),
+                    "nama_sepatu"=>$this->input->post('sepatu', TRUE),
+                    "total"=>$this->input->post('total', TRUE),
+                    "tgl_pesanan"=>$this->input->post('tgl', TRUE)
+                );
+                $this->db->insert('pesanan', $insert);
+            }
         }
         //untuk menghapus data pada tabel pesanan
         public function deletePesanan($id) {
