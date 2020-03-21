@@ -4,7 +4,7 @@
 	class Manager extends CI_Controller {
 		public function __construct() {
 			parent::__construct();
-			$this->load->model('Model File');
+			$this->load->model('Manager_Model');
 
 			if ($this->session->userdata('level') != "manager") {
 				redirect('Login', 'refresh');
