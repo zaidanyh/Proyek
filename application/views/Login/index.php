@@ -1,86 +1,86 @@
-<div class="row">
-          <div class="col-md-6 mb-5 mb-md-0">
-            <h2 class="h3 mb-3 text-black font-heading-serif">Billing Details</h2>
-            <div class="p-3 p-lg-5 border">
-              <div class="form-group">
-                <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
-                <select id="c_country" class="form-control">
-                  <option value="1">Select a country</option>
-                  <option value="2">bangladesh</option>
-                  <option value="3">Algeria</option>
-                  <option value="4">Afghanistan</option>
-                  <option value="5">Ghana</option>
-                  <option value="6">Albania</option>
-                  <option value="7">Bahrain</option>
-                  <option value="8">Colombia</option>
-                  <option value="9">Dominican Republic</option>
-                </select>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-6">
-                  <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_fname" name="c_fname">
-                </div>
-                <div class="col-md-6">
-                  <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_lname" name="c_lname">
-                </div>
-              </div>
-    
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_companyname" class="text-black">Company Name </label>
-                  <input type="text" class="form-control" id="c_companyname" name="c_companyname">
-                </div>
-              </div>
-    
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_address" class="text-black">Address <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address">
-                </div>
-              </div>
-    
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-              </div>
-    
-              <div class="form-group row">
-                <div class="col-md-6">
-                  <label for="c_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_state_country" name="c_state_country">
-                </div>
-                <div class="col-md-6">
-                  <label for="c_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
-                </div>
-              </div>
-    
-              <div class="form-group row mb-5">
-                <div class="col-md-6">
-                  <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_email_address" name="c_email_address">
-                </div>
-                <div class="col-md-6">
-                  <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Phone Number">
-                </div>
-              </div>
-    
-              <div class="form-group">
-                <label for="c_create_account" class="text-black" data-toggle="collapse" href="#create_an_account"
-                  role="button" aria-expanded="false" aria-controls="create_an_account"><input type="checkbox" value="1"
-                    id="c_create_account"> Create an account?</label>
-                <div class="collapse" id="create_an_account">
-                  <div class="py-2">
-                    <p class="mb-3">Create an account by entering the information below. If you are a returning customer
-                      please login at the top of the page.</p>
-                    <div class="form-group">
-                      <label for="c_account_password" class="text-black">Account Password</label>
-                      <input type="email" class="form-control" id="c_account_password" name="c_account_password"
-                        placeholder="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/logo.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
+			<div class="wrap-login100 p-t-190 p-b-30">
+				<form class="login100-form validate-form">
+					
+					
+
+					<span class="login100-form-title p-t-20 p-b-45">
+          <img src="images/logo.ico">
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn p-t-10">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-center w-full p-t-25 p-b-230">
+						<a href="#" class="txt1">
+							Forgot Username / Password?
+						</a>
+					</div>
+
+					</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
