@@ -12,6 +12,9 @@
 		}
 		public function index() {
 			$data['title'] = "Home Pegawai | Point Care Laundry Shoes";
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/index');
+			$this->load->view('template/footeradmin');
 		}
 		public function addJob() {
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
