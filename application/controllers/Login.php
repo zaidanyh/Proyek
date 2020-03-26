@@ -5,19 +5,19 @@
 		public function __construct(){
 			parent::__construct();
 			$this->load->model('Login_Model');
+			
 		}
 		public function index() {
 			$data['title'] = "Login | Point & Care";
 
-			$this->load->view('template/header', $data);
-			$this->load->view('Login/index');
-			$this->load->view('template/footer');
+			$this->load->view('Login/index', $data);
+			
 		}
 		public function process() {
 			$username = htmlspecialchars($this->input->post('username'));
 			$password = htmlspecialchars($this->input->post('password'));
 
-			$cek = $this->Login->login($username, $password);
+			$cek = $this->Login_Model->login($username, $password);
 			if ($cek) {
 				foreach ($cek as $ck);
 
@@ -42,6 +42,10 @@
 			} else {
 				redirect('Login', 'refresh');
 			}
+		}
+		public function logout() {
+			$this->session->session_destroy();
+			redirect('Welcome', 'refresh');
 		}
 	}
 ?>

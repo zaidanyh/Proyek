@@ -42,7 +42,7 @@
 			<div class="close-menu">x</div>
 			<!-- Main menu -->
 			<ul class="site-menu">
-				<li><a href="<?=base_url('Welcome')?>" class="active">Home</a></li>
+				<li><a href="<?=base_url('Welcome')?>">Home</a></li>
 				<li><a href="<?=base_url('Welcome/check')?>">Check your Shoes!</a></li>
 				<li><a href="<?=base_url('Welcome/about')?>">About</a></li>
 				<li><a href="<?=base_url('Login')?>">Login</a></li>
