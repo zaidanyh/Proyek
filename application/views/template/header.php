@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<title>POINT CARE LAUNDRY SHOES</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Nissa Photography studio html template">
 	<meta name="keywords" content="industry, html">
@@ -22,6 +21,7 @@
 
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>"/>
+	<title><?=$title?></title>
 
 
 	<!--[if lt IE 9]>

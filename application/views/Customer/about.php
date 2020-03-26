@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<title>POINT CARE LAUNDRY SHOES</title>
+	<title><?=$title?></title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Nissa Photography studio html template">
 	<meta name="keywords" content="industry, html">
