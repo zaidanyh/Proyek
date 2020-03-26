@@ -8,20 +8,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- Favicon -->
-	<link href="img/logo.ico" rel="shortcut icon"/>
+	<link href="<?=base_url('assets/img/logo.ico')?>" rel="shortcut icon"/>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>"/>
+	<link rel="stylesheet" href="<?=base_url('assets/css/font-awesome.min.css')?>"/>
+	<link rel="stylesheet" href="<?=base_url('assets/css/magnific-popup.css')?>"/>
+	<link rel="stylesheet" href="<?=base_url('assets/css/owl.carousel.min.css')?>"/>
 
 	<!-- Main Stylesheets -->
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>"/>
 
 
 	<!--[if lt IE 9]>

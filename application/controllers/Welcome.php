@@ -17,8 +17,11 @@
 		public function about() {
 			$data['title'] = "About Point Care Laundry Shoes";
 			
+			$this->load->view('template/header', $data);
 			$this->load->view('Customer/about');
-			}
+			$this->load->view('template/footer');
+			
+		}
 
 		public function check() {
 			$title['title'] = 'Search Your Shoes | Point Care Laundry Shoes';
