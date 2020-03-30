@@ -17,12 +17,41 @@
 			$this->load->view('Pegawai/index');
 			$this->load->view('template/footeradmin');
 		}
-		public function addJob() {
+		public function addOrder() {
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$this->load->view('View File');
-			$this->load->view('View File');
-			$this->load->view('View File');
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/orderadd');
+			$this->load->view('template/footeradmin');
 		}
+
+		public function orderlist() {
+			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/orderlist');
+			$this->load->view('template/footeradmin');
+		}
+
+		public function employeelist() {
+			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/employeelist');
+			$this->load->view('template/footeradmin');
+		}
+
+		public function employeeedit() {
+			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/employeeedit');
+			$this->load->view('template/footeradmin');
+		}
+
+		public function userprofile() {
+			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/userprofile');
+			$this->load->view('template/footeradmin');
+		}
+
 		public function addJobProcess() {
 			$this->form_validation->set_rules('kode', 'Kode', 'trim|required');
 			$this->form_validation->set_rules('pesanan', 'Pesanan', 'trim|required');

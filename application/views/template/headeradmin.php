@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" href="<?=base_url('/assets/img/favicon.png')?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Point Care | Admin Page
@@ -42,36 +42,37 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="<?=base_url('Pegawai/index')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="<?=base_url('Pegawai/userprofile')?>">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="<?=base_url('Pegawai/orderlist')?>">
               <i class="nc-icon nc-tile-56"></i>
               <p>Order</p>
             </a>
           </li>
           
             <li>
-            <a href="./notifications.html">
+            <a href="<?=base_url('Pegawai/employeelist')?>">
               <i class="nc-icon nc-bell-55"></i>
               <p>Employee</p>
             </a>
           </li>
+
           <li>
-            <a href="./icons.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Admin</p>
+            <a href="<?=base_url('Login/index')?>">
+              <i class="nc-icon nc-bell-55"></i>
+              <p>Logout</p>
             </a>
-          </li>
+          </li> 
         </ul>
       </div>
     </div>
