@@ -6,9 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" href="<?=base_url('/assets/img/favicon.png')?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Point Care | Admin Page
-  </title>
+  <title><?=$title;?></title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -38,35 +36,42 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="<?=base_url('Pegawai/index')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('Pegawai/userprofile')?>">
+            <a href="<?=base_url()?>Pegawai/userprofile/<?=$this->session->userdata('username')?>">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
             <a href="<?=base_url('Pegawai/orderlist')?>">
-              <i class="nc-icon nc-tile-56"></i>
+              <i class="fa fa-plus-square"></i>
               <p>Order</p>
             </a>
           </li>
           
-            <li>
-            <a href="<?=base_url('Pegawai/employeelist')?>">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Employee</p>
+          <li>
+            <a href="<?=base_url('Pegawai/checkOrder')?>">
+              <i class="fa fa-tasks"></i>
+              <p>Check Order</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?=base_url('Pegawai/checkOrderFinish')?>">
+              <i class="fa fa-check"></i>
+              <p>Order Finished</p>
             </a>
           </li>
 
           <li>
             <a href="<?=base_url('Login/logout')?>">
-              <i class="nc-icon nc-bell-55"></i>
+              <i class="fa fa-sign-out"></i>
               <p>Logout</p>
             </a>
           </li> 

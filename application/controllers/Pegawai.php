@@ -13,47 +13,73 @@
 		public function index() {
 			$data['title'] = "Home Pegawai | Point Care Laundry Shoes";
 			
-			$this->load->view('template/headeradmin');
+			$this->load->view('template/headeradmin', $data);
 			$this->load->view('Pegawai/index');
 			$this->load->view('template/footeradmin');
 		}
-		public function addOrder() {
-			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$this->load->view('template/headeradmin');
-			$this->load->view('Pegawai/orderadd');
-			$this->load->view('template/footeradmin');
+
+		public function userprofile($username) {
+			$title['title'] = 'Profile | Point Care Laundry Shoes';
+			$data['account'] = $this->Pegawai_Model->getDataAccount($username);
+
+			$this->form_validation->set_rules('password', 'Password', 'trim|required');
+			$this->form_validation->set_rules('fullname', 'Fullname', 'trim|required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required');
+			$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+			$this->form_validation->set_rules('foto_baru', 'Foto', 'trim|required');
+			
+			if ($this->form_validation->run() == TRUE) {
+				$this->Pegawai_Model->editAkun($username);
+				redirect('Pegawai','refresh');
+			} else {
+				$this->load->view('template/headeradmin', $title);
+				$this->load->view('Pegawai/userprofile', $data);
+				$this->load->view('template/footeradmin');
+			}
 		}
 
 		public function orderlist() {
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$this->load->view('template/headeradmin');
-			$this->load->view('Pegawai/orderlist');
+			$data['Order'] = $this->Pegawai_Model->getOrderByStatus();
+
+			$this->load->view('template/headeradmin', $title);
+			$this->load->view('Pegawai/orderlist', $data);
 			$this->load->view('template/footeradmin');
 		}
 
-		public function employeelist() {
+		public function checkOrder() {
+			$title['title'] = 'Check Order | Point Care Laundry Shoes';
+			$data['check'] = $this->Pegawai_Model->getOrderByStatus("in progress");
+
+			if ($this->input->post('keyword')) {
+				$data['check'] = $this->Pegawai_Model->searchDatainCheckOrder();
+			}
+
+			$this->load->view('template/headeradmin', $title);
+			$this->load->view('Pegawai/checkorder', $data);
+			$this->load->view('template/footeradmin');
+		}
+
+		public function checkOrderFinish() {
+			$title['title'] ='Order Finished | Point Care Laundry Shoes';
+			$data['finished'] = $this->Pegawai_Model->getOrderByStatus("finished");
+
+			$this->load->view('template/headeradmin', $title);
+			$this->load->view('View File', $data);
+			$this->load->view('template/footeradmin');
+		}
+
+		public function addOrder() {
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$this->load->view('template/headeradmin');
-			$this->load->view('Pegawai/employeelist');
+			$data['ListOrder'] = $this->Pegawai_Model->getOrderByStatus("waiting");
+
+			$this->load->view('template/headeradmin', $title);
+			$this->load->view('Pegawai/orderadd', $data);
 			$this->load->view('template/footeradmin');
 		}
-
-		public function employeeedit() {
-			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$this->load->view('template/headeradmin');
-			$this->load->view('Pegawai/employeeedit');
-			$this->load->view('template/footeradmin');
-		}
-
-		public function userprofile() {
-			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$this->load->view('template/headeradmin');
-			$this->load->view('Pegawai/userprofile');
-			$this->load->view('template/footeradmin');
-		}
-
 		public function addJobProcess() {
 			$this->form_validation->set_rules('kode', 'Kode', 'trim|required');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 			$this->form_validation->set_rules('pesanan', 'Pesanan', 'trim|required');
 			$this->form_validation->set_rules('sepatu', 'Sepatu', 'trim|required');
 			$this->form_validation->set_rules('total', 'Total', 'trim|required');
@@ -61,17 +87,29 @@
 
 			if ($this->form_validation->run() == TRUE) {
 				$this->Pegawai_Model->insertPesanan();
-				redirect('Pegawai','refresh');
+				redirect('Pegawai/orderlist','refresh');
 			} else {
-				redirect('Pegawai/addJob','refresh');
+				redirect('Pegawai/addOrder','refresh');
 			}
 		}
-		public function user() {
-			$data['title'] = 'User Profile | Point Care Laundry Shoes';
+		public function editJob($id) {
+			$title['title'] = 'Edit List Job | Pegawai Point Care Laundry Shoes';
+			$data['get'] = $this->Pegawai_Model->getOrder($id);
 
-			$this->load->view('template/headeradmin');
-			$this->load->view('Pegawai/userprofile');
-			$this->load->view('template/footeradmin');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+			$this->form_validation->set_rules('sepatu', 'Sepatu', 'trim|required');
+			$this->form_validation->set_rules('pesanan', 'Pesanan', 'trim|required');
+			$this->form_validation->set_rules('total', 'Total', 'trim|required');
+			$this->form_validation->set_rules('tgl', 'Tanggal', 'trim|required');
+
+			if ($this->form_validation->run() == TRUE) {
+				$this->Pegawai_Model->updatePesanan($id);
+				redirect('Pegawai/addOrder','refresh');
+			} else {
+				$this->load->view('template/headeradmin', $title);
+				$this->load->view('Pegawai/orderedit', $data);
+				$this->load->view('template/footeradmin');
+			}
 		}
 	}
 ?>
