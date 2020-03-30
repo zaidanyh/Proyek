@@ -5,8 +5,7 @@
               <div class="card-header">
       
               </div>
-
-               <button type="submit" href="<?=base_url('Pegawai/addEmployee')?>" class="btn btn-primary btn-round">ADD EMPLOYEE</button>
+              <a href="<?=base_url('Pegawai/addEmployee')?>"><button type="submit" class="btn btn-primary btn-round">ADD EMPLOYEE</button></a>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
