@@ -68,7 +68,7 @@
           </li>
 
           <li>
-            <a href="<?=base_url('Login/index')?>">
+            <a href="<?=base_url('Login/logout')?>">
               <i class="nc-icon nc-bell-55"></i>
               <p>Logout</p>
             </a>

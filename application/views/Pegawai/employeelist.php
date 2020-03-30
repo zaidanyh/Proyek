@@ -36,10 +36,10 @@
                           Ghufron Setyawan
                         </td>
                         <td>
-                          jedan123
+                          akughufron
                         </td>
                         <td>
-                          jedan123@gmail.com
+                          akughufron@gmail.com
                         </td>
                         
                         <td class="text-right">
