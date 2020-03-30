@@ -4,7 +4,7 @@
           <div class="col-md-4">
             <div class="card card-user">
               <div class="image">
-                <img src="../assets/img/damir-bosnjak.jpg" alt="...">
+                <img src="<?=base_url('assets/img/damir-bosnjak.jpg')?>" alt="...">
               </div>
               <div class="card-body">
                 <div class="author">

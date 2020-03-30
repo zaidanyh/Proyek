@@ -34,7 +34,7 @@
                           1
                         </td>
                         <td>
-                          Jedan
+                          Ghufron Setyawan
                         </td>
                         <td>
                           jedan123
