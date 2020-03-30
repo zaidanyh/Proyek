@@ -8,12 +8,9 @@
               </div>
               <div class="card-body">
                 <div class="author">
-                  <a href="#">
-                    <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                    <h5 class="title">NAMA PEGAWAI</h5>
-                  </a>
-                  </div>
-               
+                  <img class="avatar border-gray" src="<?=base_url('assets/images/user/default.png')?>" alt="...">
+                  <h5 class="title"><?=$this->session->userdata('nama_lengkap');?></h5>
+                </div>
               </div>
               <div class="card-footer">
                 <hr>
@@ -34,20 +31,20 @@
                   <div class="row">
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
-                        <label>Company Branch (disabled)</label>
+                        <label>Company Branch</label>
                         <input type="text" class="form-control" disabled="" placeholder="Company" value="Point Care Malang">
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                        <input type="text" name="username" class="form-control" placeholder="Username" value="">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="Email" value="">
                       </div>
                     </div>
                   </div>
@@ -56,13 +53,13 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Chet">
+                        <input type="text" name="fullname" class="form-control" placeholder="Fullname" value="">
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
                       <div class="form-group">
                         <label>Password</label>
-                        <input type="text" class="form-control" placeholder="password" value="*******">
+                        <input type="password" name="password" class="form-control" placeholder="Password" value="">
                       </div>
                     </div>
                   </div>
@@ -70,7 +67,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Alamat</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+                        <input type="text" name="alamat" class="form-control" placeholder="Address" value="">
                       </div>
                     </div>
                   </div>

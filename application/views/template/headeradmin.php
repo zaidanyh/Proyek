@@ -29,14 +29,11 @@
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="<?=base_url('assets/img/logo-small.png')?>">
+            <img src="<?=base_url('assets/images/user/default.png')?>">
           </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          ADMIN NAME
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
+          <?=$this->session->userdata('username');?>
         </a>
       </div>
       <div class="sidebar-wrapper">
