@@ -42,28 +42,35 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="<?=base_url('Pencuci/index')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="<?=base_url('Pencuci/userprofile')?>">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="<?=base_url('Pencuci/myJob')?>">
               <i class="nc-icon nc-tile-56"></i>
-              <p>Order List</p>
+              <p>My Job</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?=base_url('Pencuci/takeJob')?>">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>List Job</p>
             </a>
           </li>
                    
             <li>
-            <a href="./notifications.html">
+            <a href="<?=base_url('Pencuci/history')?>">
               <i class="nc-icon nc-bell-55"></i>
-              <p>History Order</p>
+              <p>History</p>
             </a>
           </li>
           

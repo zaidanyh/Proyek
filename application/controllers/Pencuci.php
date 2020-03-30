@@ -14,9 +14,15 @@
 			$data['title'] = "Home Pencuci | Point & Care";
 			$data['list'] = $this->Pencuci_Model->getOrder();
 
-			$this->load->view('template/header', $data);
+			$this->load->view('template/headeremployee', $data);
 			$this->load->view('Pencuci/index', $data);
-			$this->load->view('template/footer');
+			$this->load->view('template/footeremployee');
+		}
+
+		public function history() {
+			$this->load->view('template/headeremployee');
+			$this->load->view('Pencuci/history');
+			$this->load->view('template/footeremployee');
 		}
 
 		public function takeJob($id) {
