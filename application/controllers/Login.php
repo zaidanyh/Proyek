@@ -44,8 +44,8 @@
 			}
 		}
 		public function logout() {
-			$this->session->session_destroy();
-			redirect('Welcome', 'refresh');
+			$this->session->sess_destroy();
+			redirect('Login', 'refresh');
 		}
 	}
 ?>
