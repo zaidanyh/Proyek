@@ -37,5 +37,24 @@
 				redirect('Pegawai/addJob','refresh');
 			}
 		}
+		public function user() {
+			$data['title'] = 'User Profile | Point Care Laundry Shoes';
+
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/userprofile');
+			$this->load->view('template/footeradmin');
+		}
+		public function Orderlist() {
+
+			
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/orderlist');
+			$this->load->view('template/footeradmin');
+		}
+		public function employee() {
+			$this->load->view('template/headeradmin');
+			$this->load->view('Pegawai/employeelist');
+			$this->load->view('template/footeradmin');
+		}
 	}
 ?>

@@ -42,26 +42,26 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="<?=base_url('Pegawai')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="<?=base_url('Pegawai/user')?>">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="<?=base_url('Pegawai/Orderlist')?>">
               <i class="nc-icon nc-tile-56"></i>
               <p>Order List</p>
             </a>
           </li>
                    
             <li>
-            <a href="./notifications.html">
+            <a href="#?>">
               <i class="nc-icon nc-bell-55"></i>
               <p>History Order</p>
             </a>
@@ -180,13 +180,13 @@
                           1
                         </td>
                         <td>
-                          Jedan
+                          Ghufron Setyawan
                         </td>
                         <td>
-                          jedancok123
+                          akughufron
                         </td>
                         <td>
-                          jedancok123@gmail.com
+                          akughufron@gmail.com
                         </td>
                         
                         <td class="text-right">

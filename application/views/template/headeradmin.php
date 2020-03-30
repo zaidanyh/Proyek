@@ -14,10 +14,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <link href="<?=base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet" />
+  <link href="<?=base_url('assets/css/paper-dashboard.css?v=2.0.0')?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="<?=base_url('assets/demo/demo.css')?>" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -29,7 +29,7 @@
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="<?=base_url('assets/img/logo-small.png')?>">
           </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
@@ -42,26 +42,26 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="<?=base_url('Pegawai')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="<?=base_url('Pegawai/user')?>">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="<?=base_url('Pegawai/Orderlist')?>">
               <i class="nc-icon nc-tile-56"></i>
               <p>Order</p>
             </a>
           </li>
           
             <li>
-            <a href="./notifications.html">
+            <a href="<?=base_url('Pegawai/employee')?>">
               <i class="nc-icon nc-bell-55"></i>
               <p>Employee</p>
             </a>

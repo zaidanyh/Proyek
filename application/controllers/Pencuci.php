@@ -12,10 +12,10 @@
 		}
 		public function index() {
 			$data['title'] = "Home Pencuci | Point & Care";
-			$list['list'] = $this->Pencuci_Model->getOrder();
+			$data['list'] = $this->Pencuci_Model->getOrder();
 
 			$this->load->view('template/header', $data);
-			$this->load->view('Pencucui/index', $list);
+			$this->load->view('Pencuci/index', $data);
 			$this->load->view('template/footer');
 		}
 
