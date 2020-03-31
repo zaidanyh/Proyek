@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
   <div class="container-fluid">
     <div class="navbar-wrapper">
-      <p class="navbar-brand">Order List</p>
+      <p class="navbar-brand">Order Finished</p>
     </div>
   </div>
 </nav>
@@ -24,13 +24,12 @@
                 <th>Pesanan</th>
                 <th>Total</th>
                 <th>Tanggal</th>
-                <th>Status</th>
                 <th>Pencuci</th>
               </thead>
               <tbody>
                 <?php 
                 $i = 1;
-                foreach ($Order as $key) {?>
+                foreach ($finished as $key) {?>
                 <tr>
                   <td><?=$i?></td>
                   <td><?=$key['kode_pesanan']?></td>
@@ -40,20 +39,6 @@
                   <td><?=$key['nama_pesanan']?></td>
                   <td><?=$key['total']?></td>
                   <td><?=$key['tgl_pesanan']?></td>
-                  <td>
-                    <?php
-                      if ($key['status'] == "waiting") { ?>
-                        <a class="badge badge-danger p-1">waiting</a>
-                    <?php
-                      } else if ($key['status'] == "in progress") { ?>
-                        <a class="badge badge-warning p-1">in progress</a>
-                    <?php
-                      } else { ?>
-                        <a class="badge badge-success p-1">finished</a>
-                    <?php
-                      }
-                    ?>
-                  </td>
                   <td><?=$key['username']?></td>
                 </tr>
                 <?php $i++;} ?>
@@ -65,4 +50,3 @@
     </div>
   </div>
 </div>
-

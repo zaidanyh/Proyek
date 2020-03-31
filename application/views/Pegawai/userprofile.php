@@ -7,8 +7,8 @@
         </div>
         <div class="card-body">
           <div class="author">
-            <img class="avatar border-gray" src="<?=base_url('assets/images/user/'.$account->foto)?>" alt="...">
-            <h5 class="title"><?=$this->session->userdata('nama_lengkap');?></h5>
+            <img class="avatar rounded-circle" src="<?=base_url('uploads/user/'.$account->foto)?>">
+            <h5 class="title"><?=$account->nama_lengkap?></h5>
           </div>
         </div>
       </div>      
@@ -19,7 +19,7 @@
           <h5 class="card-title">Edit Profile</h5>
         </div>
         <div class="card-body">
-          <form action="" method="post" enctype="multipart/form-data">
+          <form action="" method="POST" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
@@ -51,7 +51,7 @@
               <div class="col-md-6 pl-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="text" name="password" class="form-control" placeholder="Password" >
+                  <input type="password" name="password" class="form-control" placeholder="Password">
                   <input type="hidden" name="old_password" value="<?=$account->password?>">
                 </div>
               </div>
@@ -66,7 +66,7 @@
               <div class="col-md-4">
                   <label>Foto</label>
                   <input type="hidden" name="foto_lama" value="<?=$account->foto?>">
-                  <input type="file" name="foto_baru" class="mt-1">
+                  <input type="file" name="foto" class="mt-1">
               </div>
             </div>
             <div class="row">

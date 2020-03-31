@@ -7,29 +7,29 @@
             return $this->db->where('username', $username)->get('user')->row();
         }
 
-        //untuk mengedit data pada tabel
+        //untuk mengedit data account/user
         public function editAkun($username) {
             $post = $this->input->post();
-                if (!empty($post['password'])) {
-                    $this->password = $post['password'];
-                } else {
-                    $this->password = $post['old_password'];
-                }
-                $this->nama_lengkap = $post['fullname'];
-                $this->email = $post['email'];
-                $this->alamat = $post['alamat'];
-                if (!empty($_FILES['foto_baru']['name'])) {
-                    $this->foto = $this->UploadImage();
-                } else {
-                    $this->foto = $post['foto_lama'];
-                }
-                $this->db->where('username', $username)->update('user', $this);
+            if (!empty($post['password'])) {
+                $this->password = $post['password'];
+            } else {
+                $this->password = $post['old_password'];
+            }
+            $this->nama_lengkap = $post['fullname'];
+            $this->email = $post['email'];
+            $this->alamat = $post['alamat'];
 
-                if ($this->db->affected_rows()) {
-                    return TRUE;
-                } else {
-                    return FALSE;
-                }
+            if (!empty($_FILES['foto']['name'])) {
+                $this->foto = $this->UploadImage();
+            } else {
+                $this->foto = $post['foto_lama'];
+            }
+            $this->db->where('username', $username)->update('user', $this);
+            if ($this->db->affected_rows() > 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
         }
         //untuk menambah data pada tabel pesanan
         public function insertPesanan() {
@@ -39,6 +39,7 @@
                     "atasnama"=>$this->input->post('nama', TRUE),
                     "nama_pesanan"=>$this->input->post('pesanan', TRUE),
                     "nama_sepatu"=>$this->input->post('sepatu', TRUE),
+                    "size"=>$this->input->post('size', TRUE),
                     "total"=>$this->input->post('total', TRUE),
                     "tgl_pesanan"=>$this->input->post('tgl', TRUE)
                 );
@@ -52,6 +53,7 @@
             $this->atasnama = $post['nama'];
             $this->nama_pesanan = $post['pesanan'];
             $this->nama_sepatu = $post['sepatu'];
+            $this->size = $post['size'];
             $this->total = $post['total'];
             $this->tgl_pesanan = $post['tgl'];
 
@@ -84,15 +86,15 @@
         //fungsi upload gambar
         private function UploadImage() {
             
-            $config['upload_path'] = './assets/images/user';
+            $config['upload_path'] = './uploads/user';
             $config['allowed_types'] = 'jpg|png|jpeg';
-            $config['max_size']  = '4096';
-            $config['overwrite'] = TRUE;
+            $config['max_size']  = '8192';
+            $config['overwrite'] = true;
             
             $this->load->library('upload', $config);
             
-            if ($this->upload->do_upload('foto_baru')){
-                return $this->upload->data('file_name');
+            if ($this->upload->do_upload('foto')){
+                return $this->upload->data("file_name");
             }
             return "default.png";
         }

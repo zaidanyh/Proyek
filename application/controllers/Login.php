@@ -25,18 +25,12 @@
 				$this->session->set_userdata('level', $ck->level);
 				if ($this->session->userdata('level') == "manager") {
 					$this->session->set_userdata('username', $cek[0]->username);
-					$this->session->set_userdata('nama_lengkap', $cek[0]->nama_lengkap);
-					$this->session->set_userdata('foto', $cek[0]->foto);
 					redirect('Manager','refresh');
 				} else if ($this->session->userdata('level') == "pegawai") {
 					$this->session->set_userdata('username', $cek[0]->username);
-					$this->session->set_userdata('nama_lengkap', $cek[0]->nama_lengkap);
-					$this->session->set_userdata('foto', $cek[0]->foto);
 					redirect('Pegawai','refresh');
 				} else if ($this->session->userdata('level') == "pencuci") {
 					$this->session->set_userdata('username', $cek[0]->username);
-					$this->session->set_userdata('nama_lengkap', $cek[0]->nama_lengkap);
-					$this->session->set_userdata('foto', $cek[0]->foto);
 					redirect('Pencuci','refresh');
 				} 
 			} else {

@@ -23,7 +23,6 @@
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
-                <th>No</th>
                 <th>Kode</th>
                 <th>Nama</th>
                 <th>Pesanan</th>
@@ -36,10 +35,8 @@
               </thead>
               <tbody>
                 <?php 
-                $i = 1;
                 foreach ($check as $key) {?>
                 <tr>
-                  <td><?=$i?></td>
                   <td><?=$key['kode_pesanan']?></td>
                   <td><?=$key['atasnama']?></td>
                   <td><?=$key['nama_pesanan']?></td>
@@ -47,10 +44,12 @@
                   <td><?=$key['size']?></td>
                   <td><?=$key['total']?></td>
                   <td><?=$key['tgl_pesanan']?></td>
-                  <td><?=$key['status']?></td>
+                  <td>
+                    <a class="badge badge-warning p-2"><?=$key['status']?></a>
+                  </td>
                   <td><?=$key['username']?></td>
                 </tr>
-                <?php $i++;} ?>
+                <?php } ?>
               </tbody>
             </table>
           </div>

@@ -27,7 +27,7 @@
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="<?=base_url('assets/images/user/default.png')?>">
+            <img src="<?=base_url('uploads/user/default.png')?>">
           </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
@@ -43,7 +43,7 @@
             </a>
           </li>
           <li>
-            <a href="<?=base_url()?>Pegawai/userprofile/<?=$this->session->userdata('username')?>">
+            <a href="<?=base_url()?>Pegawai/userprofile">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
