@@ -9,6 +9,38 @@
             $this->db->insert('user', $data);
             return $this->db->affected_rows();
         }
+
+        //ambil data user
+        public function getDataAccount($username) {
+            return $this->db->where('username', $username)->get('user')->row();
+        }
+
+        
+        //edit akun
+        public function editAkun($username) {
+            $post = $this->input->post();
+            if (!empty($post['password'])) {
+                $this->password = $post['password'];
+            } else {
+                $this->password = $post['old_password'];
+            }
+            $this->nama_lengkap = $post['fullname'];
+            $this->email = $post['email'];
+            $this->alamat = $post['alamat'];
+
+            if (!empty($_FILES['foto']['name'])) {
+                $this->foto = $this->UploadImage();
+            } else {
+                $this->foto = $post['foto_lama'];
+            }
+            $this->db->where('username', $username)->update('user', $this);
+            if ($this->db->affected_rows() > 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+
         //untuk delete data
         public function deleteUser($username) {
             $this->db->where('username', $username);

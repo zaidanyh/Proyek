@@ -42,7 +42,6 @@
                         </td>
                         <td class="text-right">
                         <button type="submit" class="btn btn-primary btn-round">TAKE</button>
-                        <button type="submit" class="btn btn-primary btn-round">DETAILS</button>
                         </td>
                       </tr>
                      </tbody>
