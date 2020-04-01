@@ -19,19 +19,12 @@
 
 		}
 
-		public function useredit() {
-			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-
-			$this->load->view('template/headermanager', $title);
-			$this->load->view('Manager/useredit', $data);
-			$this->load->view('template/footeradmin');
-		}
-
+		
 		public function useradd() {
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
 
 			$this->load->view('template/headermanager', $title);
-			$this->load->view('Manager/useradd', $data);
+			$this->load->view('Manager/useradd');
 			$this->load->view('template/footeradmin');
 		}
 
