@@ -9,9 +9,6 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">
-          <a class="btn btn-primary btn-round" href="<?=base_url('Pegawai/addOrder')?>">ADD ORDER</a>
-        </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
@@ -25,6 +22,7 @@
                 <th>Total</th>
                 <th>Tanggal</th>
                 <th>Pencuci</th>
+                <th class="text-center">Action</th>
               </thead>
               <tbody>
                 <?php 
@@ -40,6 +38,10 @@
                   <td><?=$key['total']?></td>
                   <td><?=$key['tgl_pesanan']?></td>
                   <td><?=$key['username']?></td>
+                  <td>
+                      <a href="" class="badge badge-success p-2" data-toggle="modal" 
+                      data-target="#popup<?=$key['register_id']?>"><i class="fa fa-check"></i> Completing</a>
+                  </td>
                 </tr>
                 <?php $i++;} ?>
               </tbody>
@@ -49,4 +51,30 @@
       </div>
     </div>
   </div>
+  <?php foreach ($finished as $key) {?>
+  <div class="modal fade" id="popup<?=$key['register_id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Transaksi</h5>
+        </div>
+        <div class="modal-body">
+          <p>Apakah Anda ingin Menyelesaikan Transaksi?</p>
+          <?=form_open('Pegawai/transaction')?>
+            <input type="hidden" name="pesanan" value="<?=$key['nama_pesanan']?>">
+            <input type="hidden" name="sepatu" value="<?=$key['nama_sepatu']?>">
+            <input type="hidden" name="size" value="<?=$key['size']?>">
+            <input type="hidden" name="total" value="<?=$key['total']?>">
+            <input type="hidden" name="tanggal" value="<?=$key['tgl_pesanan']?>">
+            <input type="hidden" name="username" value="<?=$key['username']?>">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" data-toggle="modal"><a href="<?=base_url()?>Pegawai/delete/<?=$key['register_id']?>">OK</a>OK</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          <?=form_close();?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php }?>
 </div>

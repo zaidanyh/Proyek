@@ -98,5 +98,21 @@
             }
             return "default.png";
         }
+        
+        public function TransaksiInsert() {
+            $transaction = array(
+                "nama_pesanan"=>$this->input->post('pesanan', TRUE),
+                "nama_sepatu"=>$this->input->post('sepatu', TRUE),
+                "size"=>$this->input->post('size', TRUE),
+                "total"=>$this->input->post('total', TRUE),
+                "tgl_transaksi"=>$this->input->post('tanggal', TRUE),
+                "username"=>$this->input->post('username', TRUE)
+            );
+            $this->db->insert('transaksi', $transaction);
+        }
+
+        public function deletePesanan($id) {
+            $this->db->where('register_id', $id)->delete('pesanan');
+        }
     }
 ?>

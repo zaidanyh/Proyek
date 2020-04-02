@@ -112,5 +112,24 @@
 				$this->load->view('template/footeradmin');
 			}
 		}
+		public function transaction() {
+			$this->form_validation->set_rules('pesanan', 'Pesanan', 'trim|required');
+			$this->form_validation->set_rules('sepatu', 'Sepatu', 'trim|required');
+			$this->form_validation->set_rules('size', 'Size', 'trim|required');
+			$this->form_validation->set_rules('total', 'Total', 'trim|required');
+			$this->form_validation->set_rules('tanggal', 'Tanggal', 'trim|required');
+			$this->form_validation->set_rules('username', 'Username', 'trim|required');
+			
+			if ($this->form_validation->run() == TRUE) {
+				$this->Pegawai_Model->TransaksiInsert();
+				redirect('Pegawai/checkOrderFinish','refresh');
+			} else {
+				redirect('Pegawai/checkOrderFinish','refresh');
+			}
+		}
+		public function delete($id) {
+			$this->Pegawai_Model->deletePesanan($id);
+			redirect('Pegawai/checkOrderFinish','refresh');
+		}
 	}
 ?>

@@ -7,20 +7,20 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Point Care | Admin Page
+    <?=$title?>
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <link href="<?=base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet" />
+  <link href="<?=base_url('assets/css/paper-dashboard.css?v=2.0.0')?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="<?=base_url('assets/demo/demo.css')?>" rel="stylesheet" />
 </head>
 
-<body class="">
+<body>
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <!--
@@ -29,48 +29,53 @@
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="<?=base_url('assets/img/logo-small.png')?>">
           </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          ADMIN NAME
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
+          <?=$this->session->userdata('username')?>
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="<?=base_url('Pencuci/index')?>">
+            <a href="<?=base_url('Pencuci')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('Pencuci/userprofile')?>">
+            <a href="<?=base_url('Pencuci/Account')?>">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
+
+          <li>
+            <a href="<?=base_url('Pencuci/Job')?>">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>List Job</p>
+            </a>
+          </li>
+
           <li>
             <a href="<?=base_url('Pencuci/myJob')?>">
               <i class="nc-icon nc-tile-56"></i>
               <p>My Job</p>
             </a>
           </li>
-
+         
           <li>
-            <a href="<?=base_url('Pencuci/takeJob')?>">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>List Job</p>
-            </a>
-          </li>
-                   
-            <li>
             <a href="<?=base_url('Pencuci/history')?>">
               <i class="nc-icon nc-bell-55"></i>
               <p>History</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?=base_url('Login/logout')?>">
+              <i class="fa fa-sign-out"></i>
+              <p>Logout</p>
             </a>
           </li>
           

@@ -32,7 +32,6 @@
               <input type="text" name="nama" class="form-control" placeholder="Atas Nama">
             </div>
           </div>
-          
         </div>
         <div class="row">
           <div class="col-md-2 ml-5">
