@@ -7,17 +7,17 @@
 			$this->load->model('Customer');
 		}
 		public function index() {
-			$data['title'] = "Welcome Point Care | Laundry Shoes";
+			$title['title'] = "Welcome Point Care | Laundry Shoes";
 
-			$this->load->view('template/header', $data);
+			$this->load->view('template/header', $title);
 			$this->load->view('Customer/index');
 			$this->load->view('template/footer');
 		}
 
 		public function about() {
-			$data['title'] = "About Point Care Laundry Shoes";
+			$title['title'] = "About Point Care Laundry Shoes";
 
-			$this->load->view('template/header');
+			$this->load->view('template/header', $title);
 			$this->load->view('Customer/about');
 			$this->load->view('template/footer');
 
@@ -30,7 +30,7 @@
 			if ($this->input->post('search')) {
 				$data['shoes'] = $this->Customer->Search();
 			}
-			$this->load->view('template/header');
+			$this->load->view('template/header', $title);
 			$this->load->view('Customer/check');
 			$this->load->view('template/footer');
 		}
