@@ -27,47 +27,41 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+       <a href="<?=base_url('Pencuci/Account')?>" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="<?=base_url('assets/img/logo-small.png')?>">
+            <img width="60" height="35" class="rounded-circle" src="<?=base_url('uploads/user/').$this->session->userdata('foto')?>">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          <?=$this->session->userdata('username')?>
+        <a href="<?=base_url('Pencuci/Account')?>" class="simple-text logo-normal">
+          <?=$this->session->userdata('username');?>
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="<?=base_url('Pencuci')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a href="<?=base_url('Pencuci/Account')?>">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
 
           <li>
             <a href="<?=base_url('Pencuci/Job')?>">
-              <i class="nc-icon nc-tile-56"></i>
+              <i class="fa fa-list-alt"></i>
               <p>List Job</p>
             </a>
           </li>
 
           <li>
             <a href="<?=base_url('Pencuci/myJob')?>">
-              <i class="nc-icon nc-tile-56"></i>
+              <i class="fa fa-tasks"></i>
               <p>My Job</p>
             </a>
           </li>
          
           <li>
             <a href="<?=base_url('Pencuci/history')?>">
-              <i class="nc-icon nc-bell-55"></i>
+              <i class="fa fa-book"></i>
               <p>History</p>
             </a>
           </li>

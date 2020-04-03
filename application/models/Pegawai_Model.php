@@ -106,7 +106,8 @@
                 "size"=>$this->input->post('size', TRUE),
                 "total"=>$this->input->post('total', TRUE),
                 "tgl_transaksi"=>$this->input->post('tanggal', TRUE),
-                "username"=>$this->input->post('username', TRUE)
+                "pencuci"=>$this->input->post('pencuci', TRUE),
+                "pegawai"=>$this->input->post('pegawai', TRUE)
             );
             $this->db->insert('transaksi', $transaction);
         }

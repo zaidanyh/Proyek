@@ -29,11 +29,16 @@
                   <td><?=$key['size']?></td>
                   <td><?=$key['nama_pesanan']?></td>
                   <td>
-                    <form action="" method="post">
-                      <input type="hidden" name="status" value="in progress">
-                      <input type="hidden" name="username" value="<?=$this->session->userdata('username')?>">
-                      <button type="submit" class="badge badge-success p-2"><i class="fa fa-check"></i> Take it</button>
-                    </form>
+                    <?php 
+                    if ($key['status'] == "in progress") {?>
+                      <a type="button" class="badge badge-pill badge-success p-2 text-white" data-toggle="modal" 
+                      data-target="#mbuh<?=$key['register_id']?>"><i class="fa fa-check"></i> Finish it</a>
+                    <?php
+                    } else if ($key['status'] == "finished") { ?>
+                      <a class="text-primary" style="font-size: 14pt"><i class="fa fa-check"></i></a>
+                    <?php
+                    }
+                    ?>
                   </td>
                 </tr>
                 <?php $i++;}?>
@@ -42,6 +47,29 @@
           </div>
         </div>
       </div>
+      <?php foreach ($list as $key) { ?>
+        <div class="modal fate" id="mbuh<?=$key['register_id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirm Finish Job</h5>
+              </div>
+              <form action="" method="post">
+              <div class="modal-body">
+                <p>Apakah Anda Sudah Menyelesaikan Job Ini?</p>
+                  <input type="hidden" name="status" value="finished">
+                  <input type="hidden" name="username" value="<?=$this->session->userdata('username')?>">
+                  <input type="hidden" name="idku" value="<?=$key['register_id']?>">
+              </div>
+              <div class="modal-footer">
+                <input type="submit" name="update" class="btn btn-success" value="OK">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
     </div>
   </div>
 </div>

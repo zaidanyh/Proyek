@@ -118,18 +118,18 @@
 			$this->form_validation->set_rules('size', 'Size', 'trim|required');
 			$this->form_validation->set_rules('total', 'Total', 'trim|required');
 			$this->form_validation->set_rules('tanggal', 'Tanggal', 'trim|required');
-			$this->form_validation->set_rules('username', 'Username', 'trim|required');
+			$this->form_validation->set_rules('pencuci', 'Pencuci', 'trim|required');
+			$this->form_validation->set_rules('pegawai', 'Pegawai', 'trim|required');
+
+			$id = $this->input->post('idku');
 			
 			if ($this->form_validation->run() == TRUE) {
 				$this->Pegawai_Model->TransaksiInsert();
+				$this->Pegawai_Model->deletePesanan($id);
 				redirect('Pegawai/checkOrderFinish','refresh');
 			} else {
 				redirect('Pegawai/checkOrderFinish','refresh');
 			}
-		}
-		public function delete($id) {
-			$this->Pegawai_Model->deletePesanan($id);
-			redirect('Pegawai/checkOrderFinish','refresh');
 		}
 	}
 ?>

@@ -29,8 +29,8 @@
                   <td><?=$key['size']?></td>
                   <td><?=$key['nama_pesanan']?></td>
                   <td>
-                    <button type="button" class="badge badge-success p-2" data-toggle="modal" 
-                      data-target="#confirm<?=$key['register_id']?>"><i class="fa fa-bookmark"></i> Take it</button>
+                    <a type="button" class="badge badge-pill badge-danger text-white p-2" data-toggle="modal" 
+                      data-target="#confirm<?=$key['register_id']?>"><i class="fa fa-plus"></i> Take it</a>
                   </td>
                 </tr>
                 <?php $i++;}?>
@@ -46,15 +46,18 @@
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Confirm Take Job</h5>
               </div>
+              <form action="" method="post">
               <div class="modal-body">
                 <p>Apakah Anda Yakin Mengambil Job Ini?</p>
                 <input type="hidden" name="status" value="in progress">
                 <input type="hidden" name="username" value="<?=$this->session->userdata('username')?>">
+                <input type="hidden" name="idku" value="<?=$key['register_id']?>">
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-success">OK</button>
+                <input type="submit" name="submit" class="btn btn-success" value="OK">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
               </div>
+              </form>
             </div>
           </div>
         </div>

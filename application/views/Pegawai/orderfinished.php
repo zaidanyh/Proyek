@@ -66,10 +66,12 @@
             <input type="hidden" name="size" value="<?=$key['size']?>">
             <input type="hidden" name="total" value="<?=$key['total']?>">
             <input type="hidden" name="tanggal" value="<?=$key['tgl_pesanan']?>">
-            <input type="hidden" name="username" value="<?=$key['username']?>">
+            <input type="hidden" name="pencuci" value="<?=$key['username']?>">
+            <input type="hidden" name="pegawai" value="<?=$this->session->userdata('username')?>">
+            <input type="hidden" name="idku" value="<?=$key['register_id']?>">
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success" data-toggle="modal"><a href="<?=base_url()?>Pegawai/delete/<?=$key['register_id']?>">OK</a>OK</button>
+          <button type="submit" class="btn btn-success" data-toggle="modal">OK</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
           <?=form_close();?>
         </div>

@@ -10,7 +10,7 @@
         //untuk menampilkan data dari tabel pesanan
         public function getOrder($username, $status) {
             $this->db->where('username', $username);
-            $this->db->where('status', $status);
+            $this->db->not_like('status', $status);
             return $this->db->get('pesanan')->result_array();
         }
         // untuk mengupdate kolom pada tabel pesanan, digunakan untuk mengambil job
@@ -21,6 +21,18 @@
 
             $this->db->where('register_id', $id)->update('pesanan', $this);
             
+            if ($this->db->affected_rows() > 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+        public function updateJob($id) {
+            $post = $this->input->post();
+            $this->status = $post['status'];
+
+            $this->db->where('register_id', $id)->update('pesanan', true);
+
             if ($this->db->affected_rows() > 0) {
                 return TRUE;
             } else {
@@ -70,6 +82,11 @@
         
         public function listJob($status) {
             return $this->db->where('status', $status)->get('pesanan')->result_array();
+        }
+
+        public function history($username) {
+            return $this->db->where('pencuci', $username)->get('transaksi')->result_array();
+            
         }
     }
 ?>

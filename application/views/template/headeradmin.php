@@ -25,12 +25,12 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="<?=base_url('Pegawai/userprofile')?>" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="<?=base_url('uploads/user/default.png')?>">
+            <img width="60" height="35" class="rounded-circle" src="<?=base_url('uploads/user/').$this->session->userdata('foto')?>">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="<?=base_url('Pegawai/userprofile')?>" class="simple-text logo-normal">
           <?=$this->session->userdata('username');?>
         </a>
       </div>
@@ -40,12 +40,6 @@
             <a href="<?=base_url('Pegawai/index')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=base_url()?>Pegawai/userprofile">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
             </a>
           </li>
           <li>

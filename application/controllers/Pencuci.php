@@ -38,13 +38,17 @@
 		public function Job() {
 			$title['title'] = 'List Job | Point Care Laundry Shoes';
 			$data['Job'] = $this->Pencuci_Model->listJob("waiting");
+			$id = $this->input->post('idku');
+			if ($this->input->post('submit')) {
+				$this->takeJob($id);
+			}
 
 			$this->load->view('template/headeremployee', $title);
 			$this->load->view('Pencuci/listjob', $data);
 			$this->load->view('template/footeremployee');
 		}
 
-		public function takeJob($id) {
+		private function takeJob($id) {
 			$this->form_validation->set_rules('status', 'Status', 'trim|required');
 			$this->form_validation->set_rules('username', 'Username', 'trim|required');
 
@@ -58,17 +62,25 @@
 		public function myJob() {
 			$username = $this->session->userdata('username');
 			$title['title'] = 'List My Job | Point Care Laundry Shoes';
-			$data['list'] = $this->Pencuci_Model->getOrder($username, "in progress");
+			$data['list'] = $this->Pencuci_Model->getOrder($username, "waiting");
+			$id = $this->input->post('idku');
+
+			if ($this->input->post('update')) {
+				$this->takeJob($id);
+			}
 
 			$this->load->view('template/headeremployee', $title);
 			$this->load->view('Pencuci/myjob', $data);
 			$this->load->view('template/footeremployee');
-			
 		}
 		
 		public function history() {
-			$this->load->view('template/headeremployee');
-			$this->load->view('Pencuci/history');
+			$username = $this->session->userdata('username');
+			$title['title'] = 'History My Job | Point Care Laundry Shoes';
+			$data['history'] = $this->Pencuci_Model->history($username);
+
+			$this->load->view('template/headeremployee', $title);
+			$this->load->view('Pencuci/history', $data);
 			$this->load->view('template/footeremployee');
 		}
 	}
