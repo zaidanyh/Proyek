@@ -36,21 +36,16 @@
                 <input type="number" name="size" class="form-control" placeholder="Total" value="<?=$get->size?>">
             </div>
           </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-md-3 ml-5">
-            <div class="form-group">
-              <label for="date">Tgl Pesanan</label>
-              <input type="date" name="tgl" class="form-control" placeholder="Tanggal" value="<?=$get->tgl_pesanan?>">
-            </div>
-          </div>
           <div class="col-md-3">
             <div class="form-group">
               <label>Total</label>
               <input type="number" name="total" class="form-control" placeholder="Total" value="<?=$get->total?>">
             </div>
           </div>
-          <div class="mt-3 ml-3">
+        </div>
+
+        <div class="row mb-3 col-md-12">
+          <div class="mt-3 mx-auto">
             <input class="btn btn-primary btn-round" name="submit" type="submit" value="Update">
           </div>
         </div>

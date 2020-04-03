@@ -20,7 +20,7 @@
 
 		public function userprofile() {
 			$username = $this->session->userdata('username');
-			$data['title'] = 'Profile | Point Care Laundry Shoes';
+			$data['title'] = 'Profile Pegawai | Point Care Laundry Shoes';
 			$data['account'] = $this->Pegawai_Model->getDataAccount($username);
 
 			$this->form_validation->set_rules('fullname', 'Fullname', 'trim|required');
@@ -83,7 +83,7 @@
 			$this->form_validation->set_rules('size', 'size', 'trim|required');
 			$this->form_validation->set_rules('sepatu', 'Sepatu', 'trim|required');
 			$this->form_validation->set_rules('total', 'Total', 'trim|required');
-			$this->form_validation->set_rules('tgl', 'Tanggal', 'trim|required');
+			
 
 			if ($this->form_validation->run() == TRUE) {
 				$this->Pegawai_Model->insertPesanan();
@@ -101,7 +101,6 @@
 			$this->form_validation->set_rules('pesanan', 'Pesanan', 'trim|required');
 			$this->form_validation->set_rules('size', 'Size', 'trim|required');
 			$this->form_validation->set_rules('total', 'Total', 'trim|required');
-			$this->form_validation->set_rules('tgl', 'Tanggal', 'trim|required');
 
 			if ($this->form_validation->run() == TRUE) {
 				$this->Pegawai_Model->updatePesanan($id);
@@ -114,6 +113,7 @@
 		}
 		public function transaction() {
 			$this->form_validation->set_rules('pesanan', 'Pesanan', 'trim|required');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 			$this->form_validation->set_rules('sepatu', 'Sepatu', 'trim|required');
 			$this->form_validation->set_rules('size', 'Size', 'trim|required');
 			$this->form_validation->set_rules('total', 'Total', 'trim|required');
@@ -125,6 +125,7 @@
 			
 			if ($this->form_validation->run() == TRUE) {
 				$this->Pegawai_Model->TransaksiInsert();
+				$this->Pegawai_Model->InsertLaporan();
 				$this->Pegawai_Model->deletePesanan($id);
 				redirect('Pegawai/checkOrderFinish','refresh');
 			} else {

@@ -33,6 +33,7 @@
         }
         //untuk menambah data pada tabel pesanan
         public function insertPesanan() {
+            
             if ($this->input->post('submit')) {
                 $insert = array(
                     "kode_pesanan"=>$this->input->post('kode', TRUE),
@@ -41,7 +42,7 @@
                     "nama_sepatu"=>$this->input->post('sepatu', TRUE),
                     "size"=>$this->input->post('size', TRUE),
                     "total"=>$this->input->post('total', TRUE),
-                    "tgl_pesanan"=>$this->input->post('tgl', TRUE)
+                    "tgl_pesanan"=>date("Y-m-d")
                 );
                 $this->db->insert('pesanan', $insert);
             }
@@ -55,7 +56,6 @@
             $this->nama_sepatu = $post['sepatu'];
             $this->size = $post['size'];
             $this->total = $post['total'];
-            $this->tgl_pesanan = $post['tgl'];
 
             $this->db->where('register_id', $id)->update('pesanan', $this);
             if ($this->db->affected_rows() > 0) {
@@ -107,9 +107,20 @@
                 "total"=>$this->input->post('total', TRUE),
                 "tgl_transaksi"=>$this->input->post('tanggal', TRUE),
                 "pencuci"=>$this->input->post('pencuci', TRUE),
-                "pegawai"=>$this->input->post('pegawai', TRUE)
             );
             $this->db->insert('transaksi', $transaction);
+        }
+        public function InsertLaporan() {
+            $array = array(
+                "nama_pesanan"=>$this->input->post('pesanan', TRUE),
+                "atasnama"=>$this->input->post('nama', TRUE),
+                "nama_sepatu"=>$this->input->post('sepatu', TRUE),
+                "size"=>$this->input->post('size', TRUE),
+                "total"=>$this->input->post('total', TRUE),
+                "tgl_terima"=>date("Y-m-d"),
+                "pegawai"=>$this->input->post('pegawai', TRUE)
+            );
+            $this->db->insert('laporan_transaksi', $array);
         }
 
         public function deletePesanan($id) {

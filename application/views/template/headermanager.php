@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" href="<?=base_url('/assets/img/favicon.png')?>">
+  <link rel="icon" href="<?=base_url('assets/image/logo.ico')?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title><?=$title;?></title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -25,12 +25,12 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="<?=base_url('Manager/account')?>" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="<?=base_url('uploads/user/default.png')?>">
+          <img height="35" class="rounded-circle" src="<?=base_url('uploads/user/').$this->session->userdata('foto')?>">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="<?=base_url('Manager/account')?>" class="simple-text logo-normal">
           <?=$this->session->userdata('username');?>
         </a>
       </div>
@@ -42,16 +42,17 @@
               <p>Dashboard</p>
             </a>
           </li>
+      
           <li>
-            <a href="<?=base_url()?>Manager/userprofile">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
+            <a href="<?=base_url('Manager/user')?>">
+              <i class="fa fa-user"></i>
+              <p>User</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('Manager/userlist')?>">
-              <i class="fa fa-plus-square"></i>
-              <p>Add User</p>
+            <a href="<?=base_url('Manager/user')?>">
+              <i class="fa fa-user"></i>
+              <p>User</p>
             </a>
           </li>
           <li>

@@ -61,6 +61,7 @@
         <div class="modal-body">
           <p>Apakah Anda ingin Menyelesaikan Transaksi?</p>
           <?=form_open('Pegawai/transaction')?>
+            <input type="hidden" name="nama" value="<?=$key['atasnama']?>">
             <input type="hidden" name="pesanan" value="<?=$key['nama_pesanan']?>">
             <input type="hidden" name="sepatu" value="<?=$key['nama_sepatu']?>">
             <input type="hidden" name="size" value="<?=$key['size']?>">

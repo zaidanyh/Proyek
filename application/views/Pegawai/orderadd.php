@@ -12,10 +12,10 @@
               <input type="text" name="kode" class="form-control" placeholder="Kode Pesanan">
             </div>
           </div>
-          <div class="col-md-4 pl-1">
+          <div class="col-md-4 pr-1">
             <div class="form-group">
-              <label for="date">Tgl Pesanan</label>
-              <input type="date" name="tgl" class="form-control" placeholder="Tanggal">
+              <label>Atas Nama</label>
+              <input type="text" name="nama" class="form-control" placeholder="Atas Nama">
             </div>
           </div>
         </div>
@@ -26,15 +26,7 @@
               <input type="text" name="sepatu" class="form-control" placeholder="Merk Sepatu">
             </div>
           </div>
-          <div class="col-md-4 pr-1">
-            <div class="form-group">
-              <label>Atas Nama</label>
-              <input type="text" name="nama" class="form-control" placeholder="Atas Nama">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 ml-5">
+          <div class="col-md-2">
             <div class="form-group">
               <label>Size</label>
                 <select name="size" class="form-control p-1">
@@ -52,7 +44,9 @@
                 </select>
             </div>
           </div>
-          <div class="col-md-4">
+        </div>
+        <div class="row">
+          <div class="col-md-4 ml-5">
             <div class="form-group">
               <label>Pesanan</label>
               <select name="pesanan" class="form-control p-1">
@@ -67,9 +61,7 @@
               <input type="number" name="total" class="form-control" placeholder="Total">
             </div>
           </div>
-        </div>
-        <div class="row col-md-12">
-          <div class="mx-auto mb-2">
+          <div class="ml-5 mt-3">
             <input type="submit" name="submit" class="btn btn-primary btn-round" value="Add Job">
           </div>
         </div>
