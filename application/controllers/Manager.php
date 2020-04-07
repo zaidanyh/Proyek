@@ -36,13 +36,39 @@
 				$this->load->view('template/footeradmin');
 			}
 		}
-		public function user() {
-			$title['title'] = 'Profile Manager| Point Care Laundry Shoes';
-			$data['user'] = $this->Manager_Model->getUserPencuci();
+		public function employee() {
+			$title['title'] = 'User List | Point Care Laundry Shoes';
+			$data['hasilPencuci'] = $this->Manager_Model->getUser("pencuci");
+			$data['hasilPegawai'] = $this->Manager_Model->getUser("pegawai");
 
 			$this->load->view('template/headermanager', $title);
 			$this->load->view('Manager/userlist', $data);
 			$this->load->view('template/footeradmin');
+		}
+
+		public function transaction() {
+			$title['title'] = 'Transaction Complete | Point Care Laundry Shoes';
+			$data['transaction'] = $this->Manager_Model->getTransaction();
+			
+			$this->load->view('template/headermanager', $title);
+			$this->load->view('Manager/transaksiList', $data);
+			$this->load->view('template/footeradmin');
+		}
+
+		public function addUser() {
+			$this->form_validation->set_rules('username', 'Username', 'trim|required');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required');
+			$this->form_validation->set_rules('fullname', 'Fullname', 'trim|required');
+			$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required');
+			$this->form_validation->set_rules('level', 'Level', 'trim|required');
+
+			if ($this->form_validation->run() == TRUE) {
+				$this->Manager_Model->addUser();
+				redirect('Manager/user', 'refresh');
+			} else {
+				redirect('Manager','refresh');
+			}
 		}
 	}
 ?>

@@ -85,7 +85,7 @@
         }
 
         public function history($username) {
-            return $this->db->where('pencuci', $username)->get('transaksi')->result_array();
+            return $this->db->where('username', $username)->get('transaksi')->result_array();
             
         }
     }

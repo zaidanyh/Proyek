@@ -27,10 +27,10 @@
                 <th>Status</th>
                 <th>Pencuci</th>
               </thead>
+              <?php 
+              $i = 1;
+              foreach ($OrderList as $key) { ?>
               <tbody>
-                <?php 
-                $i = 1;
-                foreach ($Order as $key) {?>
                 <tr>
                   <td><?=$i?></td>
                   <td><?=$key['kode_pesanan']?></td>
@@ -56,8 +56,8 @@
                   </td>
                   <td><?=$key['username']?></td>
                 </tr>
-                <?php $i++;} ?>
               </tbody>
+              <?php $i++;} ?>
             </table>
           </div>
         </div>

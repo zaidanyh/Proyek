@@ -42,7 +42,8 @@
                     "nama_sepatu"=>$this->input->post('sepatu', TRUE),
                     "size"=>$this->input->post('size', TRUE),
                     "total"=>$this->input->post('total', TRUE),
-                    "tgl_pesanan"=>date("Y-m-d")
+                    "tgl_pesanan"=>date("Y-m-d"),
+                    "pegawai"=>$this->input->post('pegawai', TRUE)
                 );
                 $this->db->insert('pesanan', $insert);
             }
@@ -67,11 +68,17 @@
         public function getOrder($id) {
             return $this->db->where('register_id', $id)->get('pesanan')->row();
         }
-        public function getOrderByStatus($status = null) {
-            if ($status === null) {
+        public function getOrderByStatus($username = null, $status = null) {
+            if ($username === null && $status === null) {
                 return $this->db->get('pesanan')->result_array();
-            } else {
+            } else if ($username === null) {
                 return $this->db->where('status', $status)->get('pesanan')->result_array();
+            } else if ($status === null) {
+                return $this->db->where('pegawai', $username)->get('pesanan')->result_array();
+            } else {
+                $this->db->where('pegawai', $username);
+                $this->db->where('status', $status);
+                return $this->db->get('pesanan')->result_array();
             }
         }
         public function searchDatainCheckOrder() {
@@ -79,7 +86,6 @@
             $this->db->like('kode_pesanan', $input);
             $this->db->or_like('atasnama', $input);
             $this->db->or_like('nama_sepatu', $input);
-            $this->db->or_like('atasnama', $input);
             return $this->db->get('pesanan')->result_array();
         }
 
@@ -106,7 +112,7 @@
                 "size"=>$this->input->post('size', TRUE),
                 "total"=>$this->input->post('total', TRUE),
                 "tgl_transaksi"=>$this->input->post('tanggal', TRUE),
-                "pencuci"=>$this->input->post('pencuci', TRUE),
+                "username"=>$this->input->post('pencuci', TRUE),
             );
             $this->db->insert('transaksi', $transaction);
         }
@@ -118,13 +124,18 @@
                 "size"=>$this->input->post('size', TRUE),
                 "total"=>$this->input->post('total', TRUE),
                 "tgl_terima"=>date("Y-m-d"),
-                "pegawai"=>$this->input->post('pegawai', TRUE)
+                "washer"=>$this->input->post('pencuci', TRUE),
+                "username"=>$this->input->post('pegawai', TRUE)
             );
             $this->db->insert('laporan_transaksi', $array);
         }
 
         public function deletePesanan($id) {
             $this->db->where('register_id', $id)->delete('pesanan');
+        }
+
+        public function historyTransaction($username) {
+            return $this->db->where('username', $username)->get('laporan_transaksi')->result_array();
         }
     }
 ?>

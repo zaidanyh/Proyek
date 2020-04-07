@@ -51,15 +51,22 @@
           
           <li>
             <a href="<?=base_url('Pegawai/checkOrder')?>">
-              <i class="fa fa-tasks"></i>
+              <i class="fa fa-search-plus"></i>
               <p>Check Order</p>
             </a>
           </li>
 
           <li>
             <a href="<?=base_url('Pegawai/checkOrderFinish')?>">
-              <i class="fa fa-check"></i>
-              <p>Order Finished</p>
+              <i class="fa fa-bell"></i>
+              <p>Completing Order</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?=base_url('Pegawai/History')?>">
+              <i class="fa fa-tasks"></i>
+              <p>My History</p>
             </a>
           </li>
 

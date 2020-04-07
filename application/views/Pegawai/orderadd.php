@@ -62,6 +62,7 @@
             </div>
           </div>
           <div class="ml-5 mt-3">
+            <input type="hidden" name="pegawai" value="<?=$this->session->userdata('username')?>">
             <input type="submit" name="submit" class="btn btn-primary btn-round" value="Add Job">
           </div>
         </div>

@@ -17,6 +17,7 @@
                 <th>Sepatu</th>
                 <th>Size</th>
                 <th>Pesanan</th>
+                <th>Status</th>
                 <th>Action</th>
               </thead>
               <tbody>
@@ -28,6 +29,14 @@
                   <td><?=$key['nama_sepatu']?></td>
                   <td><?=$key['size']?></td>
                   <td><?=$key['nama_pesanan']?></td>
+                  <td>
+                    <?php 
+                    if ($key['status'] == "in progress") { ?>
+                      <a class="badge badge-pill badge-warning p-2 text-white"><?=$key['status']?></a>
+                    <?php } else { ?>
+                      <a class="text-success"><i class="fa fa-check"></i> <?=$key['status']?></a>
+                    <?php }?>
+                  </td>
                   <td>
                     <?php 
                     if ($key['status'] == "in progress") {?>

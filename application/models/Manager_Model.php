@@ -8,24 +8,41 @@
             return $this->db->where('username', $username)->get('user')->row();
         }
 
-        //mengambil data user dari tabel transaksi
-        public function getUser($username = null, $level){
-            if ($username === null) {
-                $this->db->select('COUNT(t.pencuci) pencuci, u.*');
-                $this->db->from('transaksi t');
-                $this->db->join('user u', 't.username = u.username', 'inner');
+        //mengambil data user
+        public function getUser($level){
+            if ($level == "pencuci") {
+                $this->db->select('u.*, COUNT(p.status = "in progress") progress, COUNT(p.status="finished") finished, COUNT(t.username) complete');
+                $this->db->from('user u');
+                $this->db->join('transaksi t', 't.username = u.username', 'left');
+                $this->db->join('pesanan p', 'p.username = u.username', 'left');
                 $this->db->where('u.level', $level);
-                $this->db->group_by('t.pencuci');
+                $this->db->group_by('p.status, t.username');
                 return $this->db->get()->result_array();
-            } else {
-                $this->db->select('count(t.pencuci) jumlah, u.*');
-                $this->db->from('transaksi t');
-                $this->db->join('user u', 't.username = u.username', 'inner');
-                $this->db->where('t.username', $username);
-                $this->db->group_by('t.username');
+            } else if ($level == "pegawai") {
+                $this->db->select('u.*, COUNT(lp.username) transaksi, SUM(lp.total) total');
+                $this->db->from('user u');
+                $this->db->join('laporan_transaksi lp', 'lp.username = u.username', 'left');
+                $this->db->where('u.level', $level);
+                $this->db->group_by('lp.username');
                 return $this->db->get()->result_array();
             }
         }
+
+        //fungsi add user
+        public function addUser() {
+            if ($this->input->post('submit')) {
+                $user = array(
+                    "username"=>$this->input->post('username', TRUE),
+                    "password"=>$this->input->post('password', TRUE),
+                    "nama_lengkap"=>$this->input->post('fullname', TRUE),
+                    "alamat"=>$this->input->post('alamat', TRUE),
+                    "email"=>$this->input->post('email', TRUE),
+                    "level"=>$this->input->post('level', TRUE)
+                );
+                $this->db->insert('user', $user);
+            }
+        }
+        
         //edit akun
         public function editAkun($username) {
             $post = $this->input->post();
@@ -65,6 +82,14 @@
                 return $this->upload->data("file_name");
             }
             return "default.png";
+        }
+
+        public function getTransaction() {
+            $this->db->select('lp.*, t.tgl_transaksi');
+            $this->db->from('laporan_transaksi lp');
+            $this->db->join('transaksi t', 'lp.washer = t.username', 'left');
+            $this->db->group_by('lp.laporan_id');
+            return $this->db->get()->result_array();
         }
     }
 ?>

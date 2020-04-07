@@ -39,7 +39,7 @@
 
 		public function orderlist() {
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$data['Order'] = $this->Pegawai_Model->getOrderByStatus();
+			$data['OrderList'] = $this->Pegawai_Model->getOrderByStatus();
 			
 			$this->load->view('template/headeradmin', $title);
 			$this->load->view('Pegawai/orderlist', $data);
@@ -48,7 +48,7 @@
 
 		public function checkOrder() {
 			$title['title'] = 'Check Order | Point Care Laundry Shoes';
-			$data['check'] = $this->Pegawai_Model->getOrderByStatus("in progress");
+			$data['check'] = $this->Pegawai_Model->getOrderByStatus(null, "in progress");
 
 			if ($this->input->post('keyword')) {
 				$data['check'] = $this->Pegawai_Model->searchDatainCheckOrder();
@@ -61,7 +61,7 @@
 
 		public function checkOrderFinish() {
 			$title['title'] ='Order Finished | Point Care Laundry Shoes';
-			$data['finished'] = $this->Pegawai_Model->getOrderByStatus("finished");
+			$data['finished'] = $this->Pegawai_Model->getOrderByStatus(null, "finished");
 
 			$this->load->view('template/headeradmin', $title);
 			$this->load->view('Pegawai/orderfinished', $data);
@@ -69,8 +69,9 @@
 		}
 
 		public function addOrder() {
+			$username = $this->session->userdata('username');
 			$title['title'] = 'Add Job Washer | Point Care Laundry Shoes';
-			$data['ListOrder'] = $this->Pegawai_Model->getOrderByStatus("waiting");
+			$data['ListOrder'] = $this->Pegawai_Model->getOrderByStatus($username, "waiting");
 
 			$this->load->view('template/headeradmin', $title);
 			$this->load->view('Pegawai/orderadd', $data);
@@ -83,6 +84,7 @@
 			$this->form_validation->set_rules('size', 'size', 'trim|required');
 			$this->form_validation->set_rules('sepatu', 'Sepatu', 'trim|required');
 			$this->form_validation->set_rules('total', 'Total', 'trim|required');
+			$this->form_validation->set_rules('pegawai', 'Pegawai', 'trim|required');
 			
 
 			if ($this->form_validation->run() == TRUE) {
@@ -131,6 +133,16 @@
 			} else {
 				redirect('Pegawai/checkOrderFinish','refresh');
 			}
+		}
+
+		public function History() {
+			$username = $this->session->userdata('username');
+			$title['title'] = 'History Transaction | Point Care Laundry Shoes';
+			$data['data'] = $this->Pegawai_Model->historyTransaction($username);
+
+			$this->load->view('template/headeradmin', $title);
+			$this->load->view('Pegawai/history', $data);
+			$this->load->view('template/footeradmin');
 		}
 	}
 ?>

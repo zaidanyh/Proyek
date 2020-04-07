@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
   <div class="container-fluid">
     <div class="navbar-wrapper">
-      <p class="navbar-brand">History My Job</p>
+      <p class="navbar-brand">My History</p>
     </div>
   </div>
 </nav>
@@ -12,25 +12,32 @@
         <div class="card-body">
           <div class="table-responsive" style="max-height: 443px">
             <table class="table">
-              <thead class="text-primary fixed">
-                <th>No</th>
-                <th>Sepatu</th>
+              <thead class=" text-primary">
+                <th>Name Customer</th>
+                <th>Order Name</th>
+                <th>Shoes</th>
                 <th>Size</th>
-                <th>Pesanan</th>
+                <th>Total</th>
+                <th>Finish</th>
+                <th>Washer</th>
                 <th>Status</th>
               </thead>
               <tbody>
                 <?php 
-                $i = 1;
-                foreach ($history as $key) {?>
+                foreach ($data as $key) {?>
                 <tr>
-                  <td><?=$i?></td>
+                  <td><?=$key['atasnama']?></td>
+                  <td><?=$key['nama_pesanan']?></td>
                   <td><?=$key['nama_sepatu']?></td>
                   <td><?=$key['size']?></td>
-                  <td><?=$key['nama_pesanan']?></td>
-                  <td><i class="fa fa-check text-primary" style="font-size: 14pt"></i></td>
-                </tr>  
-                <?php $i++; }?>
+                  <td><?=$key['total']?></td>
+                  <td><?=$key['tgl_terima']?></td>
+                  <td><?=$key['washer']?></td>
+                  <td>
+                      <a class="text-primary"><i class="fa fa-check"></i> Complete</a>
+                  </td>
+                </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>

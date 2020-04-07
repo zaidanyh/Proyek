@@ -44,15 +44,15 @@
           </li>
       
           <li>
-            <a href="<?=base_url('Manager/user')?>">
+            <a href="<?=base_url('Manager/employee')?>">
               <i class="fa fa-user"></i>
-              <p>User</p>
+              <p>Employee</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('Manager/user')?>">
-              <i class="fa fa-user"></i>
-              <p>User</p>
+            <a href="<?=base_url('Manager/transaction')?>">
+              <i class="fa fa-archive"></i>
+              <p>Order Transaction</p>
             </a>
           </li>
           <li>

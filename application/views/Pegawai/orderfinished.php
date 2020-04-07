@@ -68,7 +68,7 @@
             <input type="hidden" name="total" value="<?=$key['total']?>">
             <input type="hidden" name="tanggal" value="<?=$key['tgl_pesanan']?>">
             <input type="hidden" name="pencuci" value="<?=$key['username']?>">
-            <input type="hidden" name="pegawai" value="<?=$this->session->userdata('username')?>">
+            <input type="hidden" name="pegawai" value="<?=$key['pegawai']?>">
             <input type="hidden" name="idku" value="<?=$key['register_id']?>">
         </div>
         <div class="modal-footer">
