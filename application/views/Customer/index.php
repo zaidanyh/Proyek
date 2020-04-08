@@ -30,16 +30,11 @@
 					</div>
 					<div class="hs-item set-bg" data-setbg="<?=base_url('assets/img/hero/2.jpg')?>">
 						<div class="hs-info">
-							<h5>Bold Architecture</h5>
-							<p>Cityscape Photography</p>
+							<h5>Your Shoes</h5>
+							<p>Our Priority</p>
 						</div>
 					</div>
-					<div class="hs-item set-bg" data-setbg="<?=base_url('assets/img/hero/3.jpg')?>">
-						<div class="hs-info">
-							<h5>Ice Cold Love</h5>
-							<p>Nature Photoagraphy</p>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
