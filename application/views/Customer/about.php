@@ -1,6 +1,4 @@
-		
-
-<div class="site-section bg-light">
+		<div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 section-title text-center mb-5">
@@ -20,3 +18,7 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="footer text-center" height="20" style="border-top: 2px solid #f3f3f3">
+	  <p>Copyright © 2020, All Rights Reserved</p>
+  </div>

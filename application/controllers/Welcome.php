@@ -26,12 +26,10 @@
 
 		public function check() {
 			$title['title'] = 'Search Your Shoes | Point Care Laundry Shoes';
+			$data['shoes'] = $this->Customer->Search();
 
-			if ($this->input->post('search')) {
-				$data['shoes'] = $this->Customer->Search();
-			}
 			$this->load->view('template/header', $title);
-			$this->load->view('Customer/check');
+			$this->load->view('Customer/check', $data);
 			$this->load->view('template/footer');
 		}
 	}
