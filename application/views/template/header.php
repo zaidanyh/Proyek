@@ -48,9 +48,9 @@
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="header-social">
-				<a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
-				<a href="https://facebook.com"><i class="fa fa-facebook-square"></i></a>
-				<a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+				<a href="https://instagram.com/pointcare"><i class="fa fa-instagram"></i></a>
+				<a href="https://facebook.com/pointcare"><i class="fa fa-facebook-square"></i></a>
+				<a href="https://twitter.com/pointcare"><i class="fa fa-twitter"></i></a>
 				<a href="https://www.whatsapp.com/"><i class="fa fa-whatsapp"></i></a>
 			</div>
 		</header>
