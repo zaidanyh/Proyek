@@ -7,7 +7,7 @@
 			</a>
 			<div class="about-info">
 				<h2>The best solution for your shoes!</h2>
-				</div>
+					</div>
 			<h4 class="pb-3">Contact Us</h4>
 			<div class="text-left ml-3">
 				<a class="text-muted" href="https://goo.gl/maps/ud4wDVf45C8zUkcN9"><i class="fa fa-map-marker"></i> Jl. Kuping Gajah No. 27, Kota Malang</a>

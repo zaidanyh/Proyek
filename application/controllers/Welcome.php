@@ -31,6 +31,7 @@
 			$this->load->view('template/header', $title);
 			$this->load->view('Customer/check', $data);
 			$this->load->view('template/footer');
+			$this->load->view('template/footeradmin');
 		}
 	}
 ?>
