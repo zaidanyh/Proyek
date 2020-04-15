@@ -65,7 +65,7 @@
 
 			if ($this->form_validation->run() == TRUE) {
 				$this->Manager_Model->addUser();
-				redirect('Manager/user', 'refresh');
+				redirect('Manager/employee', 'refresh');
 			} else {
 				redirect('Manager','refresh');
 			}
