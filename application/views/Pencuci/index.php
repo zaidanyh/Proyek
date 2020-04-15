@@ -1,3 +1,3 @@
 <div class="content">
         <div class="row">           
-               <h1>SELAMAT DATANG DI HALAMAN PEGAWAI</h1>
+               <h1>SELAMAT DATANG DI HALAMAN PENCUCI</h1>
