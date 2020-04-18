@@ -3,15 +3,13 @@
     <div class="navbar-wrapper">
       <p class="navbar-brand">Order List</p>
     </div>
+    <a class="btn btn-primary btn-round" href="<?=base_url('Pegawai/addOrder')?>">ADD ORDER</a>
   </div>
 </nav>
 <div class="content">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">
-          <a class="btn btn-primary btn-round" href="<?=base_url('Pegawai/addOrder')?>">ADD ORDER</a>
-        </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">

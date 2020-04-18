@@ -35,6 +35,12 @@
               </thead>
               <tbody>
                 <?php 
+                if (empty($check)) { ?>
+                  <tr>
+                    <td colspan="9"><p class="text-muted text-center pt-4"><i><b>Result Not Found!!</b></i></p></td>
+                  </tr>
+                <?php
+                } else {
                 foreach ($check as $key) {?>
                 <tr>
                   <td><?=$key['kode_pesanan']?></td>
@@ -49,7 +55,7 @@
                   </td>
                   <td><?=$key['username']?></td>
                 </tr>
-                <?php } ?>
+                <?php }} ?>
               </tbody>
             </table>
           </div>

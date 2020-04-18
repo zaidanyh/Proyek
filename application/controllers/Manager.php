@@ -41,6 +41,8 @@
 			$data['hasilPencuci'] = $this->Manager_Model->getUser("pencuci");
 			$data['hasilPegawai'] = $this->Manager_Model->getUser("pegawai");
 
+			$data['complete'] = $this->Manager_Model->getTransaksi();
+
 			$this->load->view('template/headermanager', $title);
 			$this->load->view('Manager/userlist', $data);
 			$this->load->view('template/footeradmin');

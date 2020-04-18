@@ -143,7 +143,7 @@
               <div class="col-md-5" style="border-right: 1px solid #f3f3f3">
                 <div class="row">
                   <div class="col-md-6">
-                    <img class="rounded-circle" src="<?=base_url('uploads/user/'.$key['foto'])?>">
+                    <img class="rounded-circle" height="85%" width="100%" src="<?=base_url('uploads/user/'.$key['foto'])?>">
                   </div>
                   <div class="col-md-6">
                     <h6 style="color: midnightblue;"><i class="fa fa-id-badge"></i> Fullname</h6>
@@ -208,7 +208,7 @@
               <div class="col-md-5" style="border-right: 1px solid #f3f3f3">
                 <div class="row">
                   <div class="col-md-6">
-                    <img class="rounded-circle" src="<?=base_url('uploads/user/'.$key['foto'])?>">
+                    <img class="rounded-circle" height="85%" width="100%" src="<?=base_url('uploads/user/'.$key['foto'])?>">
                   </div>
                   <div class="col-md-6">
                     <h6 style="color: midnightblue;"><i class="fa fa-id-badge"></i> Fullname</h6>
@@ -256,7 +256,11 @@
                         <h6 class="text-center text-white">Complete</h6>
                       </div>
                       <div class="card-body">
-                        <h6 class="text-center text-white"><?=$key['complete']?></h6>
+                        <?php foreach ($complete as $com) { 
+                          if ($com['username'] == $key['username']) { ?>
+                            <h6 class="text-center text-white"><?=$com['complete']?></h6>
+                        <?php  }
+                        }?>
                       </div>
                     </div>
                   </div>

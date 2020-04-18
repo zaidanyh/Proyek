@@ -27,7 +27,7 @@
       <div class="logo">
         <a href="<?=base_url('Manager/account')?>" class="simple-text logo-mini">
           <div class="logo-image-small">
-          <img height="35" class="rounded-circle" src="<?=base_url('uploads/user/').$this->session->userdata('foto')?>">
+          <img height="35" width="100%" class="rounded-circle" src="<?=base_url('uploads/user/').$this->session->userdata('foto')?>">
           </div>
         </a>
         <a href="<?=base_url('Manager/account')?>" class="simple-text logo-normal">

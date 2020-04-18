@@ -11,13 +11,14 @@
         //mengambil data user
         public function getUser($level){
             if ($level == "pencuci") {
-                $this->db->select('u.*, COUNT(p.status = "in progress") progress, COUNT(p.status="finished") finished, COUNT(t.username) complete');
-                $this->db->from('user u');
-                $this->db->join('transaksi t', 't.username = u.username', 'left');
-                $this->db->join('pesanan p', 'p.username = u.username', 'left');
-                $this->db->where('u.level', $level);
-                $this->db->group_by('p.status, t.username');
-                return $this->db->get()->result_array();
+                $sql = "SELECT u.*, COUNT(IF(p.status='in progress','in progress',NULL)) progress, COUNT(IF(p.status='finished','finished',NULL)) finished
+                    FROM user as u 
+                    LEFT JOIN pesanan as p ON p.username = u.username
+                    WHERE u.level = '$level'
+                    GROUP BY p.username
+                    ";
+                $result = $this->db->query($sql);
+                return $result->result_array();
             } else if ($level == "pegawai") {
                 $this->db->select('u.*, COUNT(lp.username) transaksi, SUM(lp.total) total');
                 $this->db->from('user u');
@@ -26,6 +27,12 @@
                 $this->db->group_by('lp.username');
                 return $this->db->get()->result_array();
             }
+        }
+        public function getTransaksi() {
+            $this->db->select('username, COUNT(username) complete');
+            $this->db->from('transaksi t');
+            $this->db->group_by('username');
+            return $this->db->get()->result_array();
         }
 
         //fungsi add user
