@@ -28,13 +28,6 @@
 					<li><a href="<?=base_url('Welcome/about')?>">About</a></li>
 					<li><a href="<?=base_url('Login')?>">Login</a></li>
 				</ul>
-				<div class="menu-social">
-					<a href=""><i class="fa fa-pinterest"></i></a>
-					<a href=""><i class="fa fa-facebook"></i></a>
-					<a href=""><i class="fa fa-twitter"></i></a>
-					<a href=""><i class="fa fa-dribbble"></i></a>
-					<a href=""><i class="fa fa-behance"></i></a>
-				</div>
 			</div>
 			<header class="header-section">
 				<div class="nav-switch">

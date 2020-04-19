@@ -10,7 +10,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <div class="table-responsive" style="max-height: 443px;">
+          <div class="table-responsive" style="max-height: 442px;">
             <table class="table">
               <thead class=" text-primary">
                 <th>No</th>

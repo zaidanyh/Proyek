@@ -96,6 +96,8 @@
             $this->db->from('laporan_transaksi lp');
             $this->db->join('transaksi t', 'lp.washer = t.username', 'left');
             $this->db->group_by('lp.laporan_id');
+            $this->db->order_by('lp.laporan_id', 'desc');
+            
             return $this->db->get()->result_array();
         }
     }
