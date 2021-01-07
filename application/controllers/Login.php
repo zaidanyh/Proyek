@@ -13,6 +13,14 @@
 			$this->load->view('Login/index', $data);
 			
 		}
+
+		public function register() {
+			$data['title'] = "Register | Point & Care";
+
+			$this->load->view('Login/register', $data);
+			
+		}
+
 		public function process() {
 			$username = htmlspecialchars($this->input->post('username'));
 			$password = htmlspecialchars($this->input->post('password'));
